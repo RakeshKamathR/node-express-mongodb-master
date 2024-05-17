@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "f16927b0-8c72-40a1-b7f0-bcf845fc7bcc",
+		"name": "NodeJS-ExpressJS-MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23371129"
+	},
+	"item": [
+		{
+			"name": "Create a new Tutorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"title\": \"String1\",\r\n    \"description\": \"String1\",\r\n    \"published\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post a Tutorial",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"title\": \"String1\",\r\n    \"description\": \"String1\",\r\n    \"published\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ab-dnKbLdVemF1geHU45L7ELEXqLzw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:00:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"String1\",\n    \"description\": \"String1\",\n    \"published\": false,\n    \"createdAt\": \"2024-05-17T11:00:25.776Z\",\n    \"updatedAt\": \"2024-05-17T11:00:25.776Z\",\n    \"id\": \"664738c97ec814e60da9191c\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrieve all Tutorials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Retrieve All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "343"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"157-YwlqDazVQSRZdFyAr3e2aXrZ//M\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:02:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"String\",\n        \"description\": \"String\",\n        \"published\": false,\n        \"createdAt\": \"2024-05-17T11:00:05.026Z\",\n        \"updatedAt\": \"2024-05-17T11:00:05.026Z\",\n        \"id\": \"664738b57ec814e60da9191a\"\n    },\n    {\n        \"title\": \"String1\",\n        \"description\": \"String1\",\n        \"published\": false,\n        \"createdAt\": \"2024-05-17T11:00:25.776Z\",\n        \"updatedAt\": \"2024-05-17T11:00:25.776Z\",\n        \"id\": \"664738c97ec814e60da9191c\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve all published Tutorials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/published",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"published"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Published",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials/published",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials",
+								"published"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ac-VeNM+a7uj7qoyDwJWBB82qpUmII\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:06:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"String1\",\n        \"description\": \"String1\",\n        \"published\": true,\n        \"createdAt\": \"2024-05-17T11:00:05.026Z\",\n        \"updatedAt\": \"2024-05-17T11:05:56.644Z\",\n        \"id\": \"664738b57ec814e60da9191a\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve a single Tutorial with id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"664738b57ec814e60da9191a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials",
+								"664738b57ec814e60da9191a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-ifKcIGosZX1XyilvVoRMqXJuHIo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:04:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"String\",\n    \"description\": \"String\",\n    \"published\": false,\n    \"createdAt\": \"2024-05-17T11:00:05.026Z\",\n    \"updatedAt\": \"2024-05-17T11:00:05.026Z\",\n    \"id\": \"664738b57ec814e60da9191a\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a Tutorial with id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"String1\",\r\n    \"description\": \"String1\",\r\n    \"published\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"664738b57ec814e60da9191a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Tutorial",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"String1\",\r\n    \"description\": \"String1\",\r\n    \"published\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials",
+								"664738b57ec814e60da9191a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-eLrskyV5K+qpOebje/ICJS9bwCQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:05:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tutorial was updated successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Tutorial with id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"664738b57ec814e60da9191a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tutorials/664738b57ec814e60da9191a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tutorials",
+								"664738b57ec814e60da9191a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-/QupnXSgJyc4ywICD5dtYuQLeH0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2024 11:06:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tutorial was deleted successfully!\"\n}"
+				}
+			]
+		}
+	]
+}
